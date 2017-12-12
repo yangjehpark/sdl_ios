@@ -34,6 +34,10 @@
 
   
   
+  <h4>Objective-C</h4>
+  <pre class="highlight"><code><span class="k">typedef</span> <span class="n">NSString</span> <span class="n">SDLFileName</span></code></pre>
+
+  
   
   
   
@@ -45,6 +49,13 @@
 
   
   
+  <h4>Objective-C</h4>
+  <pre class="highlight"><code><span class="k">typedef</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">SDLFileManagerStartupCompletionHandler</span><span class="p">)(</span><span class="n">BOOL</span> <span class="n">success</span><span class="p">,</span> <span class="n">NSError</span> <span class="o">*</span><span class="n">__nullable</span> <span class="n">error</span><span class="p">)</span></code></pre>
+
+  
+  <h4>Swift</h4>
+  <pre class="highlight"><code><span class="kd">typealias</span> <span class="kt">SDLFileManagerStartupCompletionHandler</span> <span class="o">=</span> <span class="p">(</span><span class="kt">Bool</span><span class="p">,</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
+
   
   
   
@@ -56,6 +67,13 @@
 
   
   
+  <h4>Objective-C</h4>
+  <pre class="highlight"><code><span class="k">typedef</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">SDLFileManagerUploadCompletionHandler</span><span class="p">)(</span><span class="n">BOOL</span> <span class="n">success</span><span class="p">,</span> <span class="n">NSUInteger</span> <span class="n">bytesAvailable</span><span class="p">,</span> <span class="n">NSError</span> <span class="o">*</span><span class="n">__nullable</span> <span class="n">error</span><span class="p">)</span></code></pre>
+
+  
+  <h4>Swift</h4>
+  <pre class="highlight"><code><span class="kd">typealias</span> <span class="kt">SDLFileManagerUploadCompletionHandler</span> <span class="o">=</span> <span class="p">(</span><span class="kt">Bool</span><span class="p">,</span> <span class="kt">UInt</span><span class="p">,</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
+
   
   
   
@@ -67,6 +85,13 @@
 
   
   
+  <h4>Objective-C</h4>
+  <pre class="highlight"><code><span class="k">typedef</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">SDLFileManagerDeleteCompletionHandler</span><span class="p">)(</span><span class="n">BOOL</span> <span class="n">success</span><span class="p">,</span> <span class="n">NSUInteger</span> <span class="n">bytesAvailable</span><span class="p">,</span> <span class="n">NSError</span> <span class="o">*</span><span class="n">__nullable</span> <span class="n">error</span><span class="p">)</span></code></pre>
+
+  
+  <h4>Swift</h4>
+  <pre class="highlight"><code><span class="kd">typealias</span> <span class="kt">SDLFileManagerDeleteCompletionHandler</span> <span class="o">=</span> <span class="p">(</span><span class="kt">Bool</span><span class="p">,</span> <span class="kt">UInt</span><span class="p">,</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
+
   
   
   
@@ -78,6 +103,13 @@
 
   
   
+  <h4>Objective-C</h4>
+  <pre class="highlight"><code><span class="k">typedef</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">SDLFileManagerListFilesCompletionHandler</span><span class="p">)(</span><span class="n">BOOL</span> <span class="n">success</span><span class="p">,</span> <span class="n">NSUInteger</span> <span class="n">bytesAvailable</span><span class="p">,</span> <span class="n">NSArray</span><span class="o">&lt;</span><span class="n">NSString</span> <span class="o">*&gt;</span> <span class="o">*</span><span class="n">fileNames</span><span class="p">,</span> <span class="n">NSError</span> <span class="o">*</span><span class="n">__nullable</span> <span class="n">error</span><span class="p">)</span></code></pre>
+
+  
+  <h4>Swift</h4>
+  <pre class="highlight"><code><span class="kd">typealias</span> <span class="kt">SDLFileManagerListFilesCompletionHandler</span> <span class="o">=</span> <span class="p">(</span><span class="kt">Bool</span><span class="p">,</span> <span class="kt">UInt</span><span class="p">,</span> <span class="p">[</span><span class="kt">String</span><span class="p">],</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
+
   
   
   
@@ -89,6 +121,13 @@
 
   
   
+  <h4>Objective-C</h4>
+  <pre class="highlight"><code><span class="k">typedef</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">SDLManagerReadyBlock</span><span class="p">)(</span><span class="n">BOOL</span> <span class="n">success</span><span class="p">,</span> <span class="n">NSError</span> <span class="o">*</span><span class="n">_Nullable</span> <span class="n">error</span><span class="p">)</span></code></pre>
+
+  
+  <h4>Swift</h4>
+  <pre class="highlight"><code><span class="kd">typealias</span> <span class="kt">SDLManagerReadyBlock</span> <span class="o">=</span> <span class="p">(</span><span class="kt">Bool</span><span class="p">,</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
+
   
   
   
@@ -100,6 +139,13 @@
 
   
   
+  <h4>Objective-C</h4>
+  <pre class="highlight"><code><span class="k">typedef</span> <span class="n">NOTIFICATION_TYPEDEF</span> <span class="n">SDLNotificationName</span></code></pre>
+
+  
+  <h4>Swift</h4>
+  <pre class="highlight"><code><span class="kd">typealias</span> <span class="kt">SDLNotificationName</span> <span class="o">=</span> <span class="kt">NSString</span></code></pre>
+
   
   
   
@@ -111,6 +157,13 @@
 
   
   
+  <h4>Objective-C</h4>
+  <pre class="highlight"><code><span class="k">typedef</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">SDLNotificationUserInfoKey</span></code></pre>
+
+  
+  <h4>Swift</h4>
+  <pre class="highlight"><code><span class="kd">typealias</span> <span class="kt">SDLNotificationUserInfoKey</span> <span class="o">=</span> <span class="kt">NSString</span></code></pre>
+
   
   
   
@@ -174,6 +227,13 @@
 
   
   
+  <h4>Objective-C</h4>
+  <pre class="highlight"><code><span class="k">typedef</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">SDLPermissionRPCName</span></code></pre>
+
+  
+  <h4>Swift</h4>
+  <pre class="highlight"><code><span class="kd">typealias</span> <span class="kt">SDLPermissionRPCName</span> <span class="o">=</span> <span class="kt">NSString</span></code></pre>
+
   
   
   
@@ -185,6 +245,13 @@
 
   
   
+  <h4>Objective-C</h4>
+  <pre class="highlight"><code><span class="k">typedef</span> <span class="n">NSUUID</span> <span class="o">*</span><span class="n">SDLPermissionObserverIdentifier</span></code></pre>
+
+  
+  <h4>Swift</h4>
+  <pre class="highlight"><code><span class="kd">typealias</span> <span class="kt">SDLPermissionObserverIdentifier</span> <span class="o">=</span> <span class="kt">NSUUID</span></code></pre>
+
   
   
   
@@ -203,7 +270,7 @@
 
   
   <h4>Swift</h4>
-  <pre class="highlight"><code><span class="kd">typealias</span> <span class="kt">SDLPermissionsChangedHandler</span> <span class="o">=</span> <span class="p">([</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">NSNumber</span> </code></pre>
+  <pre class="highlight"><code><span class="kd">typealias</span> <span class="kt">SDLPermissionsChangedHandler</span> <span class="o">=</span> <span class="p">([</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">NSNumber</span> <span class="o">&amp;</span> <span class="kt"><a href="Protocols.html#/c:objc(pl)SDLBool">SDLBool</a></span><span class="p">],</span> <span class="kt"><a href="Enums/SDLPermissionGroupStatus.html">SDLPermissionGroupStatus</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
 
   
   
@@ -223,6 +290,13 @@
 
   
   
+  <h4>Objective-C</h4>
+  <pre class="highlight"><code><span class="k">typedef</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">SDLStreamingStartBlock</span><span class="p">)(</span><span class="n">BOOL</span> <span class="n">success</span><span class="p">,</span> <span class="n">NSError</span> <span class="o">*</span><span class="n">__nullable</span> <span class="n">error</span><span class="p">)</span></code></pre>
+
+  
+  <h4>Swift</h4>
+  <pre class="highlight"><code><span class="kd">typealias</span> <span class="kt">SDLStreamingStartBlock</span> <span class="o">=</span> <span class="p">(</span><span class="kt">Bool</span><span class="p">,</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
+
   
   
   
@@ -234,6 +308,13 @@
 
   
   
+  <h4>Objective-C</h4>
+  <pre class="highlight"><code><span class="k">typedef</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">SDLStreamingEncryptionStartBlock</span><span class="p">)(</span><span class="n">BOOL</span> <span class="n">success</span><span class="p">,</span> <span class="n">BOOL</span> <span class="n">encryption</span><span class="p">,</span> <span class="n">NSError</span> <span class="o">*</span><span class="n">__nullable</span> <span class="n">error</span><span class="p">)</span></code></pre>
+
+  
+  <h4>Swift</h4>
+  <pre class="highlight"><code><span class="kd">typealias</span> <span class="kt">SDLStreamingEncryptionStartBlock</span> <span class="o">=</span> <span class="p">(</span><span class="kt">Bool</span><span class="p">,</span> <span class="kt">Bool</span><span class="p">,</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
+
   
   
   

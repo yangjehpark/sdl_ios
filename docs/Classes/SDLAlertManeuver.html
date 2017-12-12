@@ -26,9 +26,12 @@
   
   
   <h4>Objective-C</h4>
-  <pre class="highlight"><code><span class="k">@interface</span> <span class="nc">SDLAlertManeuver</span> <span class="p">:</span> <span class="nc"><a href="../Classes/SDLRPCRequest.html">SDLRPCRequest</a></span></code></pre>
+  <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">instancetype</span><span class="p">)</span><span class="n">init</span><span class="p">;</span></code></pre>
 
   
+  <h4>Swift</h4>
+  <pre class="highlight"><code><span class="nf">init</span><span class="o">!</span><span class="p">()</span></code></pre>
+
   
   
   
@@ -41,9 +44,12 @@
   
   
   <h4>Objective-C</h4>
-  <pre class="highlight"><code><span class="k">@interface</span> <span class="nc">SDLAlertManeuver</span> <span class="p">:</span> <span class="nc"><a href="../Classes/SDLRPCRequest.html">SDLRPCRequest</a></span></code></pre>
+  <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">instancetype</span><span class="p">)</span><span class="nf">initWithDictionary</span><span class="p">:(</span><span class="n">NSMutableDictionary</span> <span class="o">*</span><span class="p">)</span><span class="nv">dict</span><span class="p">;</span></code></pre>
 
   
+  <h4>Swift</h4>
+  <pre class="highlight"><code><span class="nf">init</span><span class="o">!</span><span class="p">(</span><span class="n">dictionary</span> <span class="nv">dict</span><span class="p">:</span> <span class="kt">NSMutableDictionary</span><span class="o">!</span><span class="p">)</span></code></pre>
+
   
   
   
@@ -56,9 +62,12 @@
   
   
   <h4>Objective-C</h4>
-  <pre class="highlight"><code><span class="k">@interface</span> <span class="nc">SDLAlertManeuver</span> <span class="p">:</span> <span class="nc"><a href="../Classes/SDLRPCRequest.html">SDLRPCRequest</a></span></code></pre>
+  <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">instancetype</span><span class="p">)</span><span class="nf">initWithTTS</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">ttsText</span> <span class="nf">softButtons</span><span class="p">:(</span><span class="n">NSArray</span><span class="o">&lt;</span><span class="n"><a href="../Classes/SDLSoftButton.html">SDLSoftButton</a></span> <span class="o">*&gt;</span> <span class="o">*</span><span class="p">)</span><span class="nv">softButtons</span><span class="p">;</span></code></pre>
 
   
+  <h4>Swift</h4>
+  <pre class="highlight"><code><span class="nf">init</span><span class="o">!</span><span class="p">(</span><span class="n">tts</span> <span class="nv">ttsText</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">,</span> <span class="nv">softButtons</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/SDLSoftButton.html">SDLSoftButton</a></span><span class="p">]</span><span class="o">!</span><span class="p">)</span></code></pre>
+
   
   
   
@@ -71,9 +80,12 @@
   
   
   <h4>Objective-C</h4>
-  <pre class="highlight"><code><span class="k">@interface</span> <span class="nc">SDLAlertManeuver</span> <span class="p">:</span> <span class="nc"><a href="../Classes/SDLRPCRequest.html">SDLRPCRequest</a></span></code></pre>
+  <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">instancetype</span><span class="p">)</span><span class="nf">initWithTTSChunks</span><span class="p">:(</span><span class="n">NSArray</span><span class="o">&lt;</span><span class="n"><a href="../Classes/SDLTTSChunk.html">SDLTTSChunk</a></span> <span class="o">*&gt;</span> <span class="o">*</span><span class="p">)</span><span class="nv">ttsChunks</span> <span class="nf">softButtons</span><span class="p">:(</span><span class="n">NSArray</span><span class="o">&lt;</span><span class="n"><a href="../Classes/SDLSoftButton.html">SDLSoftButton</a></span> <span class="o">*&gt;</span> <span class="o">*</span><span class="p">)</span><span class="nv">softButtons</span><span class="p">;</span></code></pre>
 
   
+  <h4>Swift</h4>
+  <pre class="highlight"><code><span class="nf">init</span><span class="o">!</span><span class="p">(</span><span class="nv">ttsChunks</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/SDLTTSChunk.html">SDLTTSChunk</a></span><span class="p">]</span><span class="o">!</span><span class="p">,</span> <span class="nv">softButtons</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/SDLSoftButton.html">SDLSoftButton</a></span><span class="p">]</span><span class="o">!</span><span class="p">)</span></code></pre>
+
   
   
   
@@ -86,9 +98,12 @@
   
   
   <h4>Objective-C</h4>
-  <pre class="highlight"><code><span class="k">@interface</span> <span class="nc">SDLAlertManeuver</span> <span class="p">:</span> <span class="nc"><a href="../Classes/SDLRPCRequest.html">SDLRPCRequest</a></span></code></pre>
+  <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">strong</span><span class="p">)</span> <span class="n">NSMutableArray</span> <span class="o">*</span><span class="n">ttsChunks</span></code></pre>
 
   
+  <h4>Swift</h4>
+  <pre class="highlight"><code><span class="k">var</span> <span class="nv">ttsChunks</span><span class="p">:</span> <span class="kt">NSMutableArray</span><span class="o">!</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
   
   
   
@@ -101,9 +116,12 @@
   
   
   <h4>Objective-C</h4>
-  <pre class="highlight"><code><span class="k">@interface</span> <span class="nc">SDLAlertManeuver</span> <span class="p">:</span> <span class="nc"><a href="../Classes/SDLRPCRequest.html">SDLRPCRequest</a></span></code></pre>
+  <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">strong</span><span class="p">)</span> <span class="n">NSMutableArray</span> <span class="o">*</span><span class="n">softButtons</span></code></pre>
 
   
+  <h4>Swift</h4>
+  <pre class="highlight"><code><span class="k">var</span> <span class="nv">softButtons</span><span class="p">:</span> <span class="kt">NSMutableArray</span><span class="o">!</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
   
   
   

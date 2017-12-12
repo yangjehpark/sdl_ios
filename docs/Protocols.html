@@ -105,6 +105,18 @@
   <a href="Protocols/SDLDebugToolConsole.html" class="slightly-smaller">See more</a>
   
   
+  <h4>Objective-C</h4>
+  <pre class="highlight"><code><span class="k">@protocol</span> <span class="nc">SDLDebugToolConsole</span> <span class="o">&lt;</span><span class="n">NSObject</span><span class="o">&gt;</span>
+
+<span class="err">@required</span>
+<span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">logInfo</span><span class="o">:</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="n">info</span><span class="p">;</span>
+
+<span class="k">@end</span></code></pre>
+
+  
+  <h4>Swift</h4>
+  <pre class="highlight"><code><span class="kd">protocol</span> <span class="kt">SDLDebugToolConsole</span> <span class="p">:</span> <span class="kt">NSObjectProtocol</span></code></pre>
+
   
   
   
@@ -117,6 +129,18 @@
   <a href="Protocols/SDLIAPSessionDelegate.html" class="slightly-smaller">See more</a>
   
   
+  <h4>Objective-C</h4>
+  <pre class="highlight"><code><span class="k">@protocol</span> <span class="nc">SDLIAPSessionDelegate</span>
+
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onSessionInitializationCompleteForSession</span><span class="p">:(</span><span class="n">SDLIAPSession</span> <span class="o">*</span><span class="p">)</span><span class="nv">session</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onSessionStreamsEnded</span><span class="p">:(</span><span class="n">SDLIAPSession</span> <span class="o">*</span><span class="p">)</span><span class="nv">session</span><span class="p">;</span>
+
+<span class="k">@end</span></code></pre>
+
+  
+  <h4>Swift</h4>
+  <pre class="highlight"><code><span class="kd">protocol</span> <span class="kt">SDLIAPSessionDelegate</span></code></pre>
+
   
   
   
@@ -129,6 +153,29 @@
   <a href="Protocols/SDLManagerDelegate.html" class="slightly-smaller">See more</a>
   
   
+  <h4>Objective-C</h4>
+  <pre class="highlight"><code><span class="k">@protocol</span> <span class="nc">SDLManagerDelegate</span> <span class="o">&lt;</span><span class="n">NSObject</span><span class="o">&gt;</span>
+
+<span class="cm">/**
+ *  Called upon a disconnection from the remote system.
+ */</span>
+<span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">managerDidDisconnect</span><span class="p">;</span>
+
+<span class="cm">/**
+ *  Called when the HMI level state of this application changes on the remote system. This is equivalent to the application's state changes in iOS such as foreground, background, or closed.
+ *
+ *  @param oldLevel The previous level which has now been left.
+ *  @param newLevel The current level.
+ */</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">hmiLevel</span><span class="p">:(</span><span class="n"><a href="Classes/SDLHMILevel.html">SDLHMILevel</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">oldLevel</span> <span class="nf">didChangeToLevel</span><span class="p">:(</span><span class="n"><a href="Classes/SDLHMILevel.html">SDLHMILevel</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">newLevel</span><span class="p">;</span>
+
+
+<span class="k">@end</span></code></pre>
+
+  
+  <h4>Swift</h4>
+  <pre class="highlight"><code><span class="kd">protocol</span> <span class="kt">SDLManagerDelegate</span> <span class="p">:</span> <span class="kt">NSObjectProtocol</span></code></pre>
+
   
   
   
@@ -141,6 +188,35 @@
   <a href="Protocols/SDLProtocolListener.html" class="slightly-smaller">See more</a>
   
   
+  <h4>Objective-C</h4>
+  <pre class="highlight"><code><span class="k">@protocol</span> <span class="nc">SDLProtocolListener</span> <span class="o">&lt;</span><span class="n">NSObject</span><span class="o">&gt;</span>
+
+<span class="k">@optional</span>
+<span class="c1">// v4.7.0 protocol handlers
+</span><span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">handleProtocolStartServiceACKMessage</span><span class="o">:</span><span class="p">(</span><span class="n"><a href="Classes/SDLProtocolMessage.html">SDLProtocolMessage</a></span> <span class="o">*</span><span class="p">)</span><span class="n">startServiceACK</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">handleProtocolStartServiceNAKMessage</span><span class="p">:(</span><span class="n"><a href="Classes/SDLProtocolMessage.html">SDLProtocolMessage</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">startServiceNAK</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">handleProtocolEndServiceACKMessage</span><span class="p">:(</span><span class="n"><a href="Classes/SDLProtocolMessage.html">SDLProtocolMessage</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">endServiceACK</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">handleProtocolEndServiceNAKMessage</span><span class="p">:(</span><span class="n"><a href="Classes/SDLProtocolMessage.html">SDLProtocolMessage</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">endServiceNAK</span><span class="p">;</span>
+
+<span class="c1">// Older protocol handlers
+</span><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">handleProtocolStartSessionACK</span><span class="p">:(</span><span class="n"><a href="Enums/SDLServiceType.html">SDLServiceType</a></span><span class="p">)</span><span class="nv">serviceType</span> <span class="nf">sessionID</span><span class="p">:(</span><span class="n">Byte</span><span class="p">)</span><span class="nv">sessionID</span> <span class="nf">version</span><span class="p">:(</span><span class="n">Byte</span><span class="p">)</span><span class="nv">version</span> <span class="n">__deprecated_msg</span><span class="p">(</span><span class="s">"use handleProtocolStartSessionACKMessage: instead"</span><span class="p">);</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">handleProtocolStartSessionACK</span><span class="p">:(</span><span class="n"><a href="Classes/SDLProtocolHeader.html">SDLProtocolHeader</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">header</span> <span class="n">__deprecated_msg</span><span class="p">(</span><span class="s">"use handleProtocolStartSessionACKMessage: instead"</span><span class="p">);</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">handleProtocolStartSessionNACK</span><span class="p">:(</span><span class="n"><a href="Enums/SDLServiceType.html">SDLServiceType</a></span><span class="p">)</span><span class="nv">serviceType</span> <span class="n">__deprecated_msg</span><span class="p">(</span><span class="s">"use handleProtocolStartSessionNAKMessage: instead"</span><span class="p">);</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">handleProtocolEndSessionACK</span><span class="p">:(</span><span class="n"><a href="Enums/SDLServiceType.html">SDLServiceType</a></span><span class="p">)</span><span class="nv">serviceType</span> <span class="n">__deprecated_msg</span><span class="p">(</span><span class="s">"use handleProtocolEndSessionACKMessage: instead"</span><span class="p">);</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">handleProtocolEndSessionNACK</span><span class="p">:(</span><span class="n"><a href="Enums/SDLServiceType.html">SDLServiceType</a></span><span class="p">)</span><span class="nv">serviceType</span> <span class="n">__deprecated_msg</span><span class="p">(</span><span class="s">"use handleProtocolEndSessionNAKMessage: instead"</span><span class="p">);</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">handleHeartbeatForSession</span><span class="p">:(</span><span class="n">Byte</span><span class="p">)</span><span class="nv">session</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">handleHeartbeatACK</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onProtocolMessageReceived</span><span class="p">:(</span><span class="n"><a href="Classes/SDLProtocolMessage.html">SDLProtocolMessage</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">msg</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">onProtocolOpened</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">onProtocolClosed</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onError</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">info</span> <span class="nf">exception</span><span class="p">:(</span><span class="n">NSException</span> <span class="o">*</span><span class="p">)</span><span class="nv">e</span><span class="p">;</span>
+
+<span class="k">@end</span></code></pre>
+
+  
+  <h4>Swift</h4>
+  <pre class="highlight"><code><span class="kd">protocol</span> <span class="kt">SDLProtocolListener</span> <span class="p">:</span> <span class="kt">NSObjectProtocol</span></code></pre>
+
   
   
   
@@ -153,6 +229,88 @@
   <a href="Protocols/SDLProxyListener.html" class="slightly-smaller">See more</a>
   
   
+  <h4>Objective-C</h4>
+  <pre class="highlight"><code><span class="k">@protocol</span> <span class="nc">SDLProxyListener</span> <span class="o">&lt;</span><span class="n">NSObject</span><span class="o">&gt;</span>
+
+<span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">onOnDriverDistraction</span><span class="o">:</span><span class="p">(</span><span class="n"><a href="Classes/SDLOnDriverDistraction.html">SDLOnDriverDistraction</a></span> <span class="o">*</span><span class="p">)</span><span class="n">notification</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onOnHMIStatus</span><span class="p">:(</span><span class="n"><a href="Classes/SDLOnHMIStatus.html">SDLOnHMIStatus</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">notification</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">onProxyClosed</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">onProxyOpened</span><span class="p">;</span>
+
+<span class="k">@optional</span>
+
+<span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">onAddCommandResponse</span><span class="o">:</span><span class="p">(</span><span class="n"><a href="Classes/SDLAddCommandResponse.html">SDLAddCommandResponse</a></span> <span class="o">*</span><span class="p">)</span><span class="n">response</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onAddSubMenuResponse</span><span class="p">:(</span><span class="n"><a href="Classes/SDLAddSubMenuResponse.html">SDLAddSubMenuResponse</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">response</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onAlertManeuverResponse</span><span class="p">:(</span><span class="n"><a href="Classes/SDLAlertManeuverResponse.html">SDLAlertManeuverResponse</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">response</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onAlertResponse</span><span class="p">:(</span><span class="n"><a href="Classes/SDLAlertResponse.html">SDLAlertResponse</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">response</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onChangeRegistrationResponse</span><span class="p">:(</span><span class="n"><a href="Classes/SDLChangeRegistrationResponse.html">SDLChangeRegistrationResponse</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">response</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onCreateInteractionChoiceSetResponse</span><span class="p">:(</span><span class="n"><a href="Classes/SDLCreateInteractionChoiceSetResponse.html">SDLCreateInteractionChoiceSetResponse</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">response</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onDeleteCommandResponse</span><span class="p">:(</span><span class="n"><a href="Classes/SDLDeleteCommandResponse.html">SDLDeleteCommandResponse</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">response</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onDeleteFileResponse</span><span class="p">:(</span><span class="n"><a href="Classes/SDLDeleteFileResponse.html">SDLDeleteFileResponse</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">response</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onDeleteInteractionChoiceSetResponse</span><span class="p">:(</span><span class="n"><a href="Classes/SDLDeleteInteractionChoiceSetResponse.html">SDLDeleteInteractionChoiceSetResponse</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">response</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onDeleteSubMenuResponse</span><span class="p">:(</span><span class="n"><a href="Classes/SDLDeleteSubMenuResponse.html">SDLDeleteSubMenuResponse</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">response</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onDiagnosticMessageResponse</span><span class="p">:(</span><span class="n"><a href="Classes/SDLDiagnosticMessageResponse.html">SDLDiagnosticMessageResponse</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">response</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onDialNumberResponse</span><span class="p">:(</span><span class="n"><a href="Classes/SDLDialNumberResponse.html">SDLDialNumberResponse</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">response</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onEncodedSyncPDataResponse</span><span class="p">:(</span><span class="n"><a href="Classes/SDLEncodedSyncPDataResponse.html">SDLEncodedSyncPDataResponse</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">response</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onEndAudioPassThruResponse</span><span class="p">:(</span><span class="n"><a href="Classes/SDLEndAudioPassThruResponse.html">SDLEndAudioPassThruResponse</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">response</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onError</span><span class="p">:(</span><span class="n">NSException</span> <span class="o">*</span><span class="p">)</span><span class="nv">e</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onGenericResponse</span><span class="p">:(</span><span class="n"><a href="Classes/SDLGenericResponse.html">SDLGenericResponse</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">response</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onGetDTCsResponse</span><span class="p">:(</span><span class="n"><a href="Classes/SDLGetDTCsResponse.html">SDLGetDTCsResponse</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">response</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onGetSystemCapabilityResponse</span><span class="p">:(</span><span class="n"><a href="Classes/SDLGetSystemCapabilityResponse.html">SDLGetSystemCapabilityResponse</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">response</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onGetVehicleDataResponse</span><span class="p">:(</span><span class="n"><a href="Classes/SDLGetVehicleDataResponse.html">SDLGetVehicleDataResponse</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">response</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onGetWayPointsResponse</span><span class="p">:(</span><span class="n"><a href="Classes.html#/c:objc(cs)SDLGetWaypointsResponse">SDLGetWaypointsResponse</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">response</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onListFilesResponse</span><span class="p">:(</span><span class="n"><a href="Classes/SDLListFilesResponse.html">SDLListFilesResponse</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">response</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onReceivedLockScreenIcon</span><span class="p">:(</span><span class="n">UIImage</span> <span class="o">*</span><span class="p">)</span><span class="nv">icon</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onOnAppInterfaceUnregistered</span><span class="p">:(</span><span class="n"><a href="Classes/SDLOnAppInterfaceUnregistered.html">SDLOnAppInterfaceUnregistered</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">notification</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onOnAudioPassThru</span><span class="p">:(</span><span class="n"><a href="Classes/SDLOnAudioPassThru.html">SDLOnAudioPassThru</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">notification</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onOnButtonEvent</span><span class="p">:(</span><span class="n"><a href="Classes/SDLOnButtonEvent.html">SDLOnButtonEvent</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">notification</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onOnButtonPress</span><span class="p">:(</span><span class="n"><a href="Classes/SDLOnButtonPress.html">SDLOnButtonPress</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">notification</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onOnCommand</span><span class="p">:(</span><span class="n"><a href="Classes/SDLOnCommand.html">SDLOnCommand</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">notification</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onOnEncodedSyncPData</span><span class="p">:(</span><span class="n"><a href="Classes/SDLOnEncodedSyncPData.html">SDLOnEncodedSyncPData</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">notification</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onOnHashChange</span><span class="p">:(</span><span class="n"><a href="Classes/SDLOnHashChange.html">SDLOnHashChange</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">notification</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onOnKeyboardInput</span><span class="p">:(</span><span class="n"><a href="Classes/SDLOnKeyboardInput.html">SDLOnKeyboardInput</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">notification</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onOnLanguageChange</span><span class="p">:(</span><span class="n"><a href="Classes/SDLOnLanguageChange.html">SDLOnLanguageChange</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">notification</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onOnLockScreenNotification</span><span class="p">:(</span><span class="n"><a href="Classes/SDLOnLockScreenStatus.html">SDLOnLockScreenStatus</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">notification</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onOnPermissionsChange</span><span class="p">:(</span><span class="n"><a href="Classes/SDLOnPermissionsChange.html">SDLOnPermissionsChange</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">notification</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onOnSyncPData</span><span class="p">:(</span><span class="n"><a href="Classes/SDLOnSyncPData.html">SDLOnSyncPData</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">notification</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onOnSystemRequest</span><span class="p">:(</span><span class="n"><a href="Classes/SDLOnSystemRequest.html">SDLOnSystemRequest</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">notification</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onOnTBTClientState</span><span class="p">:(</span><span class="n"><a href="Classes/SDLOnTBTClientState.html">SDLOnTBTClientState</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">notification</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onOnTouchEvent</span><span class="p">:(</span><span class="n"><a href="Classes/SDLOnTouchEvent.html">SDLOnTouchEvent</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">notification</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onOnVehicleData</span><span class="p">:(</span><span class="n"><a href="Classes/SDLOnVehicleData.html">SDLOnVehicleData</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">notification</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onOnWayPointChange</span><span class="p">:(</span><span class="n"><a href="Classes.html#/c:objc(cs)SDLOnWaypointChange">SDLOnWaypointChange</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">notification</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onPerformAudioPassThruResponse</span><span class="p">:(</span><span class="n"><a href="Classes/SDLPerformAudioPassThruResponse.html">SDLPerformAudioPassThruResponse</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">response</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onPerformInteractionResponse</span><span class="p">:(</span><span class="n"><a href="Classes/SDLPerformInteractionResponse.html">SDLPerformInteractionResponse</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">response</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onPutFileResponse</span><span class="p">:(</span><span class="n"><a href="Classes/SDLPutFileResponse.html">SDLPutFileResponse</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">response</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onReadDIDResponse</span><span class="p">:(</span><span class="n"><a href="Classes/SDLReadDIDResponse.html">SDLReadDIDResponse</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">response</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onRegisterAppInterfaceResponse</span><span class="p">:(</span><span class="n"><a href="Classes/SDLRegisterAppInterfaceResponse.html">SDLRegisterAppInterfaceResponse</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">response</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onResetGlobalPropertiesResponse</span><span class="p">:(</span><span class="n"><a href="Classes/SDLResetGlobalPropertiesResponse.html">SDLResetGlobalPropertiesResponse</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">response</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onScrollableMessageResponse</span><span class="p">:(</span><span class="n"><a href="Classes/SDLScrollableMessageResponse.html">SDLScrollableMessageResponse</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">response</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onSendHapticDataResponse</span><span class="p">:(</span><span class="n"><a href="Classes/SDLSendHapticDataResponse.html">SDLSendHapticDataResponse</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">response</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onSendLocationResponse</span><span class="p">:(</span><span class="n"><a href="Classes/SDLSendLocationResponse.html">SDLSendLocationResponse</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">response</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onSetAppIconResponse</span><span class="p">:(</span><span class="n"><a href="Classes/SDLSetAppIconResponse.html">SDLSetAppIconResponse</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">response</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onSetDisplayLayoutResponse</span><span class="p">:(</span><span class="n"><a href="Classes/SDLSetDisplayLayoutResponse.html">SDLSetDisplayLayoutResponse</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">response</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onSetGlobalPropertiesResponse</span><span class="p">:(</span><span class="n"><a href="Classes/SDLSetGlobalPropertiesResponse.html">SDLSetGlobalPropertiesResponse</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">response</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onSetMediaClockTimerResponse</span><span class="p">:(</span><span class="n"><a href="Classes/SDLSetMediaClockTimerResponse.html">SDLSetMediaClockTimerResponse</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">response</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onShowConstantTBTResponse</span><span class="p">:(</span><span class="n"><a href="Classes/SDLShowConstantTBTResponse.html">SDLShowConstantTBTResponse</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">response</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onShowResponse</span><span class="p">:(</span><span class="n"><a href="Classes/SDLShowResponse.html">SDLShowResponse</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">response</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onSliderResponse</span><span class="p">:(</span><span class="n"><a href="Classes/SDLSliderResponse.html">SDLSliderResponse</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">response</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onSpeakResponse</span><span class="p">:(</span><span class="n"><a href="Classes/SDLSpeakResponse.html">SDLSpeakResponse</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">response</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onSubscribeButtonResponse</span><span class="p">:(</span><span class="n"><a href="Classes/SDLSubscribeButtonResponse.html">SDLSubscribeButtonResponse</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">response</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onSubscribeVehicleDataResponse</span><span class="p">:(</span><span class="n"><a href="Classes/SDLSubscribeVehicleDataResponse.html">SDLSubscribeVehicleDataResponse</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">response</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onSubscribeWayPointsResponse</span><span class="p">:(</span><span class="n"><a href="Classes.html#/c:objc(cs)SDLSubscribeWaypointsResponse">SDLSubscribeWaypointsResponse</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">response</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onSyncPDataResponse</span><span class="p">:(</span><span class="n"><a href="Classes/SDLSyncPDataResponse.html">SDLSyncPDataResponse</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">response</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onUpdateTurnListResponse</span><span class="p">:(</span><span class="n"><a href="Classes/SDLUpdateTurnListResponse.html">SDLUpdateTurnListResponse</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">response</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onUnregisterAppInterfaceResponse</span><span class="p">:(</span><span class="n"><a href="Classes/SDLUnregisterAppInterfaceResponse.html">SDLUnregisterAppInterfaceResponse</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">response</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onUnsubscribeButtonResponse</span><span class="p">:(</span><span class="n"><a href="Classes/SDLUnsubscribeButtonResponse.html">SDLUnsubscribeButtonResponse</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">response</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onUnsubscribeVehicleDataResponse</span><span class="p">:(</span><span class="n"><a href="Classes/SDLUnsubscribeVehicleDataResponse.html">SDLUnsubscribeVehicleDataResponse</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">response</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onUnsubscribeWayPointsResponse</span><span class="p">:(</span><span class="n"><a href="Classes.html#/c:objc(cs)SDLUnsubscribeWaypointsResponse">SDLUnsubscribeWaypointsResponse</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">response</span><span class="p">;</span>
+
+<span class="k">@end</span></code></pre>
+
+  
+  <h4>Swift</h4>
+  <pre class="highlight"><code><span class="kd">protocol</span> <span class="kt">SDLProxyListener</span> <span class="p">:</span> <span class="kt">NSObjectProtocol</span></code></pre>
+
   
   
   
@@ -165,6 +323,29 @@
   <a href="Protocols/SDLRequestHandler.html" class="slightly-smaller">See more</a>
   
   
+  <h4>Objective-C</h4>
+  <pre class="highlight"><code><span class="k">@protocol</span> <span class="nc">SDLRequestHandler</span> <span class="o">&lt;</span><span class="n">NSObject</span><span class="o">&gt;</span>
+
+<span class="cm">/**
+ *  The handler that is added to any RPC implementing this protocol.
+ */</span>
+<span class="k">@property</span> <span class="p">(</span><span class="n">copy</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n"><a href="Type Definitions.html#/c:SDLNotificationConstants.h@T@SDLRPCNotificationHandler">SDLRPCNotificationHandler</a></span> <span class="n">handler</span><span class="p">;</span>
+
+<span class="cm">/**
+ *  A special init function on any RPC implementing this protocol.
+ *
+ *  @param handler The handler to be called at specified times, such as events for buttons.
+ *
+ *  @return An instance of the class implementing this protocol.
+ */</span>
+<span class="k">-</span> <span class="p">(</span><span class="n">instancetype</span><span class="p">)</span><span class="nf">initWithHandler</span><span class="p">:(</span><span class="n"><a href="Type Definitions.html#/c:SDLNotificationConstants.h@T@SDLRPCNotificationHandler">SDLRPCNotificationHandler</a></span><span class="p">)</span><span class="nv">handler</span><span class="p">;</span>
+
+<span class="k">@end</span></code></pre>
+
+  
+  <h4>Swift</h4>
+  <pre class="highlight"><code><span class="kd">protocol</span> <span class="kt">SDLRequestHandler</span> <span class="p">:</span> <span class="kt">NSObjectProtocol</span></code></pre>
+
   
   
   
@@ -177,6 +358,27 @@
   <a href="Protocols/SDLSecurityType.html" class="slightly-smaller">See more</a>
   
   
+  <h4>Objective-C</h4>
+  <pre class="highlight"><code><span class="k">@protocol</span> <span class="nc">SDLSecurityType</span> <span class="o">&lt;</span><span class="n">NSObject</span><span class="o">&gt;</span>
+
+<span class="k">@property</span> <span class="p">(</span><span class="n">copy</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">appId</span><span class="p">;</span>
+
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">initializeWithAppId</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">appId</span> <span class="nf">completionHandler</span><span class="p">:(</span><span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nullable</span> <span class="n">error</span><span class="p">))</span><span class="nv">completionHandler</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">stop</span><span class="p">;</span>
+
+<span class="k">-</span> <span class="p">(</span><span class="n">nullable</span> <span class="n">NSData</span> <span class="o">*</span><span class="p">)</span><span class="nf">runHandshakeWithClientData</span><span class="p">:(</span><span class="n">NSData</span> <span class="o">*</span><span class="p">)</span><span class="nv">data</span> <span class="nf">error</span><span class="p">:(</span><span class="n">NSError</span> <span class="o">**</span><span class="p">)</span><span class="nv">error</span><span class="p">;</span>
+
+<span class="k">-</span> <span class="p">(</span><span class="n">nullable</span> <span class="n">NSData</span> <span class="o">*</span><span class="p">)</span><span class="nf">encryptData</span><span class="p">:(</span><span class="n">NSData</span> <span class="o">*</span><span class="p">)</span><span class="nv">data</span> <span class="nf">withError</span><span class="p">:(</span><span class="n">NSError</span> <span class="o">**</span><span class="p">)</span><span class="nv">error</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="n">nullable</span> <span class="n">NSData</span> <span class="o">*</span><span class="p">)</span><span class="nf">decryptData</span><span class="p">:(</span><span class="n">NSData</span> <span class="o">*</span><span class="p">)</span><span class="nv">data</span> <span class="nf">withError</span><span class="p">:(</span><span class="n">NSError</span> <span class="o">**</span><span class="p">)</span><span class="nv">error</span><span class="p">;</span>
+
+<span class="k">+</span> <span class="p">(</span><span class="n">NSSet</span><span class="o">&lt;</span><span class="n">NSString</span> <span class="o">*&gt;</span> <span class="o">*</span><span class="p">)</span><span class="n">availableMakes</span><span class="p">;</span>
+
+<span class="k">@end</span></code></pre>
+
+  
+  <h4>Swift</h4>
+  <pre class="highlight"><code><span class="kd">protocol</span> <span class="kt">SDLSecurityType</span> <span class="p">:</span> <span class="kt">NSObjectProtocol</span></code></pre>
+
   
   
   
@@ -189,6 +391,102 @@
   <a href="Protocols/SDLTouchManagerDelegate.html" class="slightly-smaller">See more</a>
   
   
+  <h4>Objective-C</h4>
+  <pre class="highlight"><code><span class="k">@protocol</span> <span class="nc">SDLTouchManagerDelegate</span> <span class="o">&lt;</span><span class="n">NSObject</span><span class="o">&gt;</span>
+
+<span class="k">@optional</span>
+
+<span class="cm">/**
+ *  @abstract
+ *      Single tap was received.
+ *  @param manager
+ *      Current initalized SDLTouchManager issuing the callback.
+ *  @param point
+ *      Location of the single tap in the head unit's coordinate system.
+ */</span>
+<span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">touchManager</span><span class="o">:</span><span class="p">(</span><span class="n"><a href="Classes/SDLTouchManager.html">SDLTouchManager</a></span> <span class="o">*</span><span class="p">)</span><span class="n">manager</span> <span class="n">didReceiveSingleTapAtPoint</span><span class="o">:</span><span class="p">(</span><span class="n">CGPoint</span><span class="p">)</span><span class="n">point</span><span class="p">;</span>
+
+<span class="cm">/**
+ *  @abstract
+ *      Double tap was received.
+ *  @param manager
+ *      Current initalized SDLTouchManager issuing the callback.
+ *  @param point
+ *      Location of the double tap in the head unit's coordinate system. This is the
+ *      average of the first and second tap.
+ */</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">touchManager</span><span class="p">:(</span><span class="n"><a href="Classes/SDLTouchManager.html">SDLTouchManager</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">manager</span> <span class="nf">didReceiveDoubleTapAtPoint</span><span class="p">:(</span><span class="n">CGPoint</span><span class="p">)</span><span class="nv">point</span><span class="p">;</span>
+
+<span class="cm">/**
+ *  @abstract
+ *      Panning did start.
+ *  @param manager
+ *      Current initalized SDLTouchManager issuing the callback.
+ *  @param point
+ *      Location of the panning start point in the head unit's coordinate system.
+ */</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">touchManager</span><span class="p">:(</span><span class="n"><a href="Classes/SDLTouchManager.html">SDLTouchManager</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">manager</span> <span class="nf">panningDidStartAtPoint</span><span class="p">:(</span><span class="n">CGPoint</span><span class="p">)</span><span class="nv">point</span><span class="p">;</span>
+
+<span class="cm">/**
+ *  @abstract
+ *      Panning did move.
+ *  @param manager
+ *      Current initalized SDLTouchManager issuing the callback.
+ *  @param fromPoint
+ *      Location of the panning's previous point in the head unit's coordinate system.
+ *  @param toPoint
+ *      Location of the panning's new point in the head unit's coordinate system.
+ */</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">touchManager</span><span class="p">:(</span><span class="n"><a href="Classes/SDLTouchManager.html">SDLTouchManager</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">manager</span> <span class="nf">didReceivePanningFromPoint</span><span class="p">:(</span><span class="n">CGPoint</span><span class="p">)</span><span class="nv">fromPoint</span> <span class="nf">toPoint</span><span class="p">:(</span><span class="n">CGPoint</span><span class="p">)</span><span class="nv">toPoint</span><span class="p">;</span>
+
+<span class="cm">/**
+ *  @abstract
+ *      Panning did end.
+ *  @param manager
+ *      Current initalized SDLTouchManager issuing the callback.
+ *  @param point
+ *      Location of the panning's end point in the head unit's coordinate system.
+ */</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">touchManager</span><span class="p">:(</span><span class="n"><a href="Classes/SDLTouchManager.html">SDLTouchManager</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">manager</span> <span class="nf">panningDidEndAtPoint</span><span class="p">:(</span><span class="n">CGPoint</span><span class="p">)</span><span class="nv">point</span><span class="p">;</span>
+
+<span class="cm">/**
+ *  @abstract
+ *      Pinch did start.
+ *  @param manager
+ *      Current initalized SDLTouchManager issuing the callback.
+ *  @param point
+ *      Center point of the pinch in the head unit's coordinate system.
+ */</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">touchManager</span><span class="p">:(</span><span class="n"><a href="Classes/SDLTouchManager.html">SDLTouchManager</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">manager</span> <span class="nf">pinchDidStartAtCenterPoint</span><span class="p">:(</span><span class="n">CGPoint</span><span class="p">)</span><span class="nv">point</span><span class="p">;</span>
+
+<span class="cm">/**
+ *  @abstract
+ *      Pinch did move.
+ *  @param manager
+ *      Current initalized SDLTouchManager issuing the callback.
+ *  @param point
+ *      Center point of the pinch in the head unit's coordinate system.
+ *  @param scale
+ *      Scale relative to the distance between touch points.
+ */</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">touchManager</span><span class="p">:(</span><span class="n"><a href="Classes/SDLTouchManager.html">SDLTouchManager</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">manager</span> <span class="nf">didReceivePinchAtCenterPoint</span><span class="p">:(</span><span class="n">CGPoint</span><span class="p">)</span><span class="nv">point</span> <span class="nf">withScale</span><span class="p">:(</span><span class="n">CGFloat</span><span class="p">)</span><span class="nv">scale</span><span class="p">;</span>
+
+<span class="cm">/**
+ *  @abstract
+ *      Pinch did end.
+ *  @param manager
+ *      Current initalized SDLTouchManager issuing the callback.
+ *  @param point
+ *      Center point of the pinch in the head unit's coordinate system.
+ */</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">touchManager</span><span class="p">:(</span><span class="n"><a href="Classes/SDLTouchManager.html">SDLTouchManager</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">manager</span> <span class="nf">pinchDidEndAtCenterPoint</span><span class="p">:(</span><span class="n">CGPoint</span><span class="p">)</span><span class="nv">point</span><span class="p">;</span>
+
+<span class="k">@end</span></code></pre>
+
+  
+  <h4>Swift</h4>
+  <pre class="highlight"><code><span class="kd">protocol</span> <span class="kt">SDLTouchManagerDelegate</span> <span class="p">:</span> <span class="kt">NSObjectProtocol</span></code></pre>
+
   
   
   
@@ -201,6 +499,19 @@
   <a href="Protocols/SDLTransportDelegate.html" class="slightly-smaller">See more</a>
   
   
+  <h4>Objective-C</h4>
+  <pre class="highlight"><code><span class="k">@protocol</span> <span class="nc">SDLTransportDelegate</span> <span class="o">&lt;</span><span class="n">NSObject</span><span class="o">&gt;</span>
+
+<span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">onTransportConnected</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">onTransportDisconnected</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onDataReceived</span><span class="p">:(</span><span class="n">NSData</span> <span class="o">*</span><span class="p">)</span><span class="nv">receivedData</span><span class="p">;</span>
+
+<span class="k">@end</span></code></pre>
+
+  
+  <h4>Swift</h4>
+  <pre class="highlight"><code><span class="kd">protocol</span> <span class="kt">SDLTransportDelegate</span></code></pre>
+
   
   
   

@@ -28,6 +28,13 @@
 
   
   
+  <h4>Objective-C</h4>
+  <pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">enableSiphonDebug</span><span class="p">;</span></code></pre>
+
+  
+  <h4>Swift</h4>
+  <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">enableSiphonDebug</span><span class="p">()</span></code></pre>
+
   
   
   
@@ -39,6 +46,13 @@
 
   
   
+  <h4>Objective-C</h4>
+  <pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">disableSiphonDebug</span><span class="p">;</span></code></pre>
+
+  
+  <h4>Swift</h4>
+  <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">disableSiphonDebug</span><span class="p">()</span></code></pre>
+
   
   
   
@@ -50,6 +64,13 @@
 
   
   
+  <h4>Objective-C</h4>
+  <pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">bool</span><span class="p">)</span><span class="nf">_siphonRawTransportDataFromApp</span><span class="p">:(</span><span class="k">const</span> <span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="nv">msgBytes</span> <span class="nf">msgBytesLength</span><span class="p">:(</span><span class="kt">int</span><span class="p">)</span><span class="nv">msgBytesLength</span><span class="p">;</span></code></pre>
+
+  
+  <h4>Swift</h4>
+  <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">_siphonRawTransportData</span><span class="p">(</span><span class="n">fromApp</span> <span class="nv">msgBytes</span><span class="p">:</span> <span class="kt">UnsafeRawPointer</span><span class="o">!</span><span class="p">,</span> <span class="nv">msgBytesLength</span><span class="p">:</span> <span class="kt">Int32</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
   
   
   
@@ -61,6 +82,13 @@
 
   
   
+  <h4>Objective-C</h4>
+  <pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">bool</span><span class="p">)</span><span class="nf">_siphonRawTransportDataFromSDL</span><span class="p">:(</span><span class="k">const</span> <span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="nv">msgBytes</span> <span class="nf">msgBytesLength</span><span class="p">:(</span><span class="kt">int</span><span class="p">)</span><span class="nv">msgBytesLength</span><span class="p">;</span></code></pre>
+
+  
+  <h4>Swift</h4>
+  <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">_siphonRawTransportData</span><span class="p">(</span><span class="n">fromSDL</span> <span class="nv">msgBytes</span><span class="p">:</span> <span class="kt">UnsafeRawPointer</span><span class="o">!</span><span class="p">,</span> <span class="nv">msgBytesLength</span><span class="p">:</span> <span class="kt">Int32</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
   
   
   
@@ -72,6 +100,13 @@
 
   
   
+  <h4>Objective-C</h4>
+  <pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">bool</span><span class="p">)</span><span class="nf">_siphonNSLogData</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">textToLog</span><span class="p">;</span></code></pre>
+
+  
+  <h4>Swift</h4>
+  <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">_siphonNSLogData</span><span class="p">(</span><span class="n">_</span> <span class="nv">textToLog</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
   
   
   
@@ -83,6 +118,13 @@
 
   
   
+  <h4>Objective-C</h4>
+  <pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">bool</span><span class="p">)</span><span class="nf">_siphonFormattedTraceData</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">traceData</span><span class="p">;</span></code></pre>
+
+  
+  <h4>Swift</h4>
+  <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">_siphonFormattedTraceData</span><span class="p">(</span><span class="n">_</span> <span class="nv">traceData</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
   
   
   
@@ -94,6 +136,13 @@
 
   
   
+  <h4>Objective-C</h4>
+  <pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">bool</span><span class="p">)</span><span class="n">_siphonIsActive</span><span class="p">;</span></code></pre>
+
+  
+  <h4>Swift</h4>
+  <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">_siphonIsActive</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
   
   
   
@@ -105,6 +154,13 @@
 
   
   
+  <h4>Objective-C</h4>
+  <pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">init</span><span class="p">;</span></code></pre>
+
+  
+  <h4>Swift</h4>
+  <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="err">`</span><span class="kd">init</span><span class="err">`</span><span class="p">()</span></code></pre>
+
   
   
   
@@ -116,6 +172,13 @@
 
   
   
+  <h4>Objective-C</h4>
+  <pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">dealloc</span><span class="p">;</span></code></pre>
+
+  
+  <h4>Swift</h4>
+  <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">dealloc</span><span class="p">()</span></code></pre>
+
   
   
   

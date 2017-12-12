@@ -99,9 +99,12 @@
   
   
   <h4>Objective-C</h4>
-  <pre class="highlight"><code><span class="k">@interface</span> <span class="nc">SDLTTSChunk</span> <span class="p">:</span> <span class="nc"><a href="../Classes/SDLRPCStruct.html">SDLRPCStruct</a></span></code></pre>
+  <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">instancetype</span><span class="p">)</span><span class="nf">initWithText</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">text</span> <span class="nf">type</span><span class="p">:(</span><span class="n"><a href="../Classes/SDLSpeechCapabilities.html">SDLSpeechCapabilities</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">type</span><span class="p">;</span></code></pre>
 
   
+  <h4>Swift</h4>
+  <pre class="highlight"><code><span class="nf">init</span><span class="o">!</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">,</span> <span class="nv">type</span><span class="p">:</span> <span class="kt"><a href="../Classes/SDLSpeechCapabilities.html">SDLSpeechCapabilities</a></span><span class="o">!</span><span class="p">)</span></code></pre>
+
   
   
   
@@ -114,9 +117,12 @@
   
   
   <h4>Objective-C</h4>
-  <pre class="highlight"><code><span class="k">@interface</span> <span class="nc">SDLTTSChunk</span> <span class="p">:</span> <span class="nc"><a href="../Classes/SDLRPCStruct.html">SDLRPCStruct</a></span></code></pre>
+  <pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">NSMutableArray</span><span class="o">&lt;</span><span class="n">SDLTTSChunk</span> <span class="o">*&gt;</span> <span class="o">*</span><span class="p">)</span><span class="nf">textChunksFromString</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">string</span><span class="p">;</span></code></pre>
 
   
+  <h4>Swift</h4>
+  <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">textChunks</span><span class="p">(</span><span class="n">from</span> <span class="nv">string</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">NSMutableArray</span><span class="o">!</span></code></pre>
+
   
   
   
@@ -129,9 +135,12 @@
   
   
   <h4>Objective-C</h4>
-  <pre class="highlight"><code><span class="k">@interface</span> <span class="nc">SDLTTSChunk</span> <span class="p">:</span> <span class="nc"><a href="../Classes/SDLRPCStruct.html">SDLRPCStruct</a></span></code></pre>
+  <pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">NSMutableArray</span><span class="o">&lt;</span><span class="n">SDLTTSChunk</span> <span class="o">*&gt;</span> <span class="o">*</span><span class="p">)</span><span class="nf">sapiChunksFromString</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">string</span><span class="p">;</span></code></pre>
 
   
+  <h4>Swift</h4>
+  <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">sapiChunks</span><span class="p">(</span><span class="n">from</span> <span class="nv">string</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">NSMutableArray</span><span class="o">!</span></code></pre>
+
   
   
   
@@ -144,9 +153,12 @@
   
   
   <h4>Objective-C</h4>
-  <pre class="highlight"><code><span class="k">@interface</span> <span class="nc">SDLTTSChunk</span> <span class="p">:</span> <span class="nc"><a href="../Classes/SDLRPCStruct.html">SDLRPCStruct</a></span></code></pre>
+  <pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">NSMutableArray</span><span class="o">&lt;</span><span class="n">SDLTTSChunk</span> <span class="o">*&gt;</span> <span class="o">*</span><span class="p">)</span><span class="nf">lhPlusChunksFromString</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">string</span><span class="p">;</span></code></pre>
 
   
+  <h4>Swift</h4>
+  <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">lhPlusChunks</span><span class="p">(</span><span class="n">from</span> <span class="nv">string</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">NSMutableArray</span><span class="o">!</span></code></pre>
+
   
   
   
@@ -159,9 +171,12 @@
   
   
   <h4>Objective-C</h4>
-  <pre class="highlight"><code><span class="k">@interface</span> <span class="nc">SDLTTSChunk</span> <span class="p">:</span> <span class="nc"><a href="../Classes/SDLRPCStruct.html">SDLRPCStruct</a></span></code></pre>
+  <pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">NSMutableArray</span><span class="o">&lt;</span><span class="n">SDLTTSChunk</span> <span class="o">*&gt;</span> <span class="o">*</span><span class="p">)</span><span class="nf">prerecordedChunksFromString</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">string</span><span class="p">;</span></code></pre>
 
   
+  <h4>Swift</h4>
+  <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">prerecordedChunks</span><span class="p">(</span><span class="n">from</span> <span class="nv">string</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">NSMutableArray</span><span class="o">!</span></code></pre>
+
   
   
   
@@ -174,9 +189,12 @@
   
   
   <h4>Objective-C</h4>
-  <pre class="highlight"><code><span class="k">@interface</span> <span class="nc">SDLTTSChunk</span> <span class="p">:</span> <span class="nc"><a href="../Classes/SDLRPCStruct.html">SDLRPCStruct</a></span></code></pre>
+  <pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">NSMutableArray</span><span class="o">&lt;</span><span class="n">SDLTTSChunk</span> <span class="o">*&gt;</span> <span class="o">*</span><span class="p">)</span><span class="n">silenceChunks</span><span class="p">;</span></code></pre>
 
   
+  <h4>Swift</h4>
+  <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">silenceChunks</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">NSMutableArray</span><span class="o">!</span></code></pre>
+
   
   
   

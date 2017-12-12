@@ -41,6 +41,13 @@
 
   
   
+  <h4>Objective-C</h4>
+  <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">)</span> <span class="n">BOOL</span> <span class="n">videoSessionConnected</span></code></pre>
+
+  
+  <h4>Swift</h4>
+  <pre class="highlight"><code><span class="k">var</span> <span class="nv">videoSessionConnected</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
   
   
   
@@ -52,6 +59,13 @@
 
   
   
+  <h4>Objective-C</h4>
+  <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">)</span> <span class="n">BOOL</span> <span class="n">audioSessionConnected</span></code></pre>
+
+  
+  <h4>Swift</h4>
+  <pre class="highlight"><code><span class="k">var</span> <span class="nv">audioSessionConnected</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
   
   
   
@@ -63,6 +77,13 @@
 
   
   
+  <h4>Objective-C</h4>
+  <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">)</span> <span class="n">BOOL</span> <span class="n">videoSessionEncrypted</span></code></pre>
+
+  
+  <h4>Swift</h4>
+  <pre class="highlight"><code><span class="k">var</span> <span class="nv">videoSessionEncrypted</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
   
   
   
@@ -74,6 +95,13 @@
 
   
   
+  <h4>Objective-C</h4>
+  <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">)</span> <span class="n">BOOL</span> <span class="n">audioSessionEncrypted</span></code></pre>
+
+  
+  <h4>Swift</h4>
+  <pre class="highlight"><code><span class="k">var</span> <span class="nv">audioSessionEncrypted</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
   
   
   
@@ -213,6 +241,13 @@
 
   
   
+  <h4>Objective-C</h4>
+  <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">instancetype</span><span class="p">)</span><span class="nf">initWithProtocol</span><span class="p">:(</span><span class="n"><a href="../Classes/SDLAbstractProtocol.html">SDLAbstractProtocol</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">protocol</span> <span class="n">__deprecated_msg</span><span class="p">((</span><span class="s">"Please use initWithProtocol:displayCapabilities: instead"</span><span class="p">));</span></code></pre>
+
+  
+  <h4>Swift</h4>
+  <pre class="highlight"><code><span class="nf">init</span><span class="p">(</span><span class="n">with</span> <span class="nv">protocol</span><span class="p">:</span> <span class="kt"><a href="../Classes/SDLAbstractProtocol.html">SDLAbstractProtocol</a></span><span class="p">)</span></code></pre>
+
   
   
   
@@ -224,6 +259,13 @@
 
   
   
+  <h4>Objective-C</h4>
+  <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">instancetype</span><span class="p">)</span><span class="nf">initWithProtocol</span><span class="p">:(</span><span class="n"><a href="../Classes/SDLAbstractProtocol.html">SDLAbstractProtocol</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">protocol</span> <span class="nf">displayCapabilities</span><span class="p">:(</span><span class="n"><a href="../Classes/SDLDisplayCapabilities.html">SDLDisplayCapabilities</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">displayCapabilities</span><span class="p">;</span></code></pre>
+
+  
+  <h4>Swift</h4>
+  <pre class="highlight"><code><span class="nf">init</span><span class="p">(</span><span class="n">with</span> <span class="nv">protocol</span><span class="p">:</span> <span class="kt"><a href="../Classes/SDLAbstractProtocol.html">SDLAbstractProtocol</a></span><span class="p">,</span> <span class="nv">displayCapabilities</span><span class="p">:</span> <span class="kt"><a href="../Classes/SDLDisplayCapabilities.html">SDLDisplayCapabilities</a></span><span class="p">)</span></code></pre>
+
   
   
   
@@ -372,7 +414,7 @@
       -sendVideoData:
   </h3>
   
-  <p>This method receives raw image data and will run iOS8+&rsquo;s hardware video encoder to turn the data into a video stream, which will then be passed to the connected head unit.</p>
+  <p>This method receives raw image data and will run iOS8+&lsquo;s hardware video encoder to turn the data into a video stream, which will then be passed to the connected head unit.</p>
 
   
   
@@ -427,6 +469,13 @@
 
   
   
+  <h4>Objective-C</h4>
+  <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">startAudioSessionWithTLS</span><span class="p">:(</span><span class="n"><a href="../Enums/SDLEncryptionFlag.html">SDLEncryptionFlag</a></span><span class="p">)</span><span class="nv">encryptionFlag</span> <span class="nf">startBlock</span><span class="p">:(</span><span class="n"><a href="../Type Definitions.html#/c:SDLStreamingMediaManager.h@T@SDLStreamingEncryptionStartBlock">SDLStreamingEncryptionStartBlock</a></span><span class="p">)</span><span class="nv">startBlock</span><span class="p">;</span></code></pre>
+
+  
+  <h4>Swift</h4>
+  <pre class="highlight"><code><span class="kd">func</span> <span class="nf">startAudioSession</span><span class="p">(</span><span class="n">withTLS</span> <span class="nv">encryptionFlag</span><span class="p">:</span> <span class="kt"><a href="../Enums/SDLEncryptionFlag.html">SDLEncryptionFlag</a></span><span class="p">,</span> <span class="n">start</span> <span class="nv">startBlock</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="../Type Definitions.html#/c:SDLStreamingMediaManager.h@T@SDLStreamingEncryptionStartBlock">SDLStreamingEncryptionStartBlock</a></span><span class="p">)</span></code></pre>
+
   
   
   
