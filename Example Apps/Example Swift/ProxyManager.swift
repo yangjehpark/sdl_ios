@@ -133,6 +133,12 @@ private extension ProxyManager {
 
             SDLLog.d("SDL file manager storage: \(self.sdlManager.fileManager.bytesAvailable / 1024 / 1024) mb")
         })
+     
+        // Set app icon image for SDL 2.0
+        if let setAppIcon = SDLSetAppIcon() {
+            setAppIcon.syncFileName = SDLConstants.imageNameAppIcon
+            sdlManager.send(setAppIcon)
+        }
     }
 }
 
